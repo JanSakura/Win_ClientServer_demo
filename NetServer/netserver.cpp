@@ -67,7 +67,7 @@ bool Server::coreFunc(){
 		for (auto client : clientList) {
 			FD_SET(client, &fdRead);
 		}
-		//超时等待时间，设置为1s,第一个参数是秒，第二个是微秒10^-6s
+		//瓒呮椂绛夊緟鏃堕棿锛岃缃负1s,绗竴涓弬鏁版槸绉掞紝绗簩涓槸寰10^-6s
 		timeval tval{ 1,0 };
 		int selectRes = select(0, &fdRead, nullptr, nullptr, &tval);
 		if (selectRes > 0) {
