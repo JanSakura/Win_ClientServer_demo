@@ -1,4 +1,16 @@
 # Win_ClientServer_demo
+方便debug可以定义宏
+```
+#define DEBUG 1
+#if DEBUG 
+#define Print(fmt,...) \
+printf("File:%s ,Func:%s ,Line:%d ;" fmt,__FILE__,__FUNCDNAME__,__LINE__,__VA_ARGS__)
+#else
+#define Print(fmr,...)
+#endif
+```
+
+
 message.hpp是封装的互相通信的消息结构体，为Client和Server共用的
 
 使用类进行封装基本的server和client网络通信步骤。
